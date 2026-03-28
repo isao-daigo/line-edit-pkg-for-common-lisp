@@ -1,0 +1,40 @@
+(pushnew :build-as-packages *features*)
+(pushnew :use-history-pkg *features*)
+;;(pushnew :debug *features*)
+
+;; 環境変数[env-var]で指定されたパスを第1引数のファイルに付加した文字列を返す関数[get-src-path]を定義。
+(load "~/build-utils.lisp")
+
+#+ sbcl (load (get-src-path "package-util.fasl"))
+#+ sbcl (load (get-src-path "simple-debug-functions.fasl"))
+#+ sbcl (load (get-src-path "basic-symbol-name-function.fasl"))
+#+ sbcl (load (get-src-path "external-command.fasl"))
+#+ sbcl (load (get-src-path "print-color-string.fasl"))
+#+ sbcl (load (get-src-path "history-pkg.fasl"))
+#+ sbcl (load (get-src-path "line-edit-pkg.fasl"))
+
+#+ clisp (load (get-src-path "package-util.fas"))
+#+ clisp (load (get-src-path "simple-debug-functions.fas"))
+#+ clisp (load (get-src-path "basic-symbol-name-function.fas"))
+#+ clisp (load (get-src-path "external-command.fas"))
+#+ clisp (load (get-src-path "print-color-string.fas"))
+#+ clisp (load (get-src-path "history-pkg.fas"))
+#+ clisp (load (get-src-path "line-edit-pkg.fas"))
+
+#+ gcl (load (get-src-path "package-util.o"))
+#+ gcl (load (get-src-path "simple-debug-functions.o"))
+#+ gcl (load (get-src-path "basic-symbol-name-function.o"))
+#+ gcl (load (get-src-path "external-command.o"))
+#+ gcl (load (get-src-path "print-color-string.o"))
+#+ gcl (load (get-src-path "history-pkg.o"))
+#+ gcl (load (get-src-path "line-edit-pkg.o"))
+
+;;#+sbcl (sb-int:clear-info :function :where-from 'external-command:find-current-and-home-dir)
+;;#+sbcl (sb-int:clear-info :function :type 'external-command:find-current-and-home-dir)
+;;#+sbcl (sb-int:clear-info :function :definition 'external-command:find-current-and-home-dir)
+;;#+sbcl (declaim (sb-ext:muffle-conditions sb-ext:compiler-note))
+(compile-file (get-src-path "history-repl.lisp"))
+
+#+sbcl (exit)
+#+clisp (exit)
+#+gcl (si::bye)

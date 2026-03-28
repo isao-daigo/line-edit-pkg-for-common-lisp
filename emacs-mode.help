@@ -1,0 +1,131 @@
+Command keys:
+	C-u [num]	Do next command 'num' times (optional, default=4 times).
+
+	C-f		Move forward one character.
+	M-f		Move forward one word.	
+	M-C-d		Move forward down one level of parenthesis.
+	M-C-n		Move forward across one balanced group of parenthesis.
+	M-C-f		Move forward across one balanced symbolic-expression.
+
+	C-b		Move backward one character.
+	M-b		Move backward one word.
+	M-C-u		Move backward out of one level of parenthesis.
+	M-C-p		Move backward across one balanced group of parenthesis.
+	M-C-b		Move backward across one balanced symbolic-expression.
+
+	M-p		Move to balanced parenthesis.
+	M-n		Move to next word (like conventional editor).
+
+	C-a		Move to beginning of line.
+	C-e		Move to end of line.
+	M-a		Move to beginning of text.
+	M-e		Move to end of text.
+
+	C-p		Search history backward (previous history).
+	C-n		Search history forward (next history).
+
+	C-v		Scroll down one line.
+	M-v		Scroll up one line (or C-^).
+
+	C-x <		Scroll left.
+	C-x >		Scroll right.
+
+	M-<		Move to oldest history.
+	M->		Move to end of history (same as M-k).
+
+	C-i		Completion (or TAB).	
+	C-s		Incremental search.
+
+	C-d		Delete character (or DEL).
+	M-d		Kill word.
+	M-C-k		Kill symbolic-expression.
+	C-k		Kill line from cursor to end.
+	M-k		Kill whole line and reset search position.
+
+	BS		Delete backward character (or C-h).
+	M-BS		Backward kill word (or M-C-h).
+
+	M-z <c>		Kill characters until <c> (zap-to-char).
+ 	M-\		Delete spaces and tabs around point.
+	M-s		Delete spaces and tabs around point, leaving one space.
+
+	C-t		Transpose characters.
+	M-t		Transpose words.
+	M-C-t		Transpose symbolic-expression.
+
+	M-(		Enclose following symbolic-expression in parenthesis.
+
+	C-@		Set region mark (or C-o)
+	M-@		Mark word (or M-o).
+	M-C-@		Mark symbolic-expression (or M-C-o).
+	C-x C-x		Exchange point and mark.
+
+	C-w		Kill-region (cut).
+	M-w		Kill-ring-save (copy).
+	M-C-w		Force next kills to append to previous kill.
+
+	C-y		Yank (paste from kill-ring).
+	M-y		Paste from kill-ring 2'nd last, 3'rd last,..
+
+	C-x r s	<R>	Copy region to register <R> (<R> = any character).
+	C-x r i <R>	Insert text from register <R>.
+
+	C-x i		Insert file just before cursor position.
+	C-x C-f         Discard line then insert file.
+	C-x C-w         Write current line to specified file.
+	C-x C-s		Write current line to file.
+
+	M-u		Convert word to upper-case (upcase-word).
+	M-l		Convert word to lower-case (downcase-word).
+	M-c		Capitalize word.
+
+	C-l		Redraw line, delete control code.
+
+	C-g		Abort command.
+
+	C-x u		Undo previous changes (or C-_ or M-,).
+	C-x U		Undo previous undo (or M-.).
+
+	C-x (		Start keyboard macro.
+	C-u C-x (	Append to last macro defined.
+	C-x )		End Keyboard macro.
+	C-x e		Call last keyboard macro.
+	C-x q		Query user during kbd macro execution.
+	C-x C-k		Edit a keyboard macro.
+
+	C-x =		print infomation on cursor position.
+
+	C-q		Quote next character.
+
+	<ENTER>		end input.
+
+	C-f means press <Ctrl> key then press <f>.
+	M-f means press <Meta> key then press <f>.
+	Most PC's keyboard, use <Alt> or <Esc> instead of <Meta>.
+	If use <Esc>, press <Esc> key and release it, then press <f>.
+
+un-keybinded-functions:
+	(self-insert-newline)	insert #\Newline.
+	(view-register)		print registers which contains text.
+	(view-register #\R)	print contents of register R.
+	(save-registers)	saves all register to file.
+	(restore-registers)	restore all registers from file.
+	(registers-file)	returns current registers file-name.
+	(registers-file fname)	set registers file to 'fname'.
+	(undo-limit)		returns current undo limit.
+	(undo-limit n)		set undo limit to n.
+	(blink-paren-deley)	blinking time in sec.
+	(blink-paren-deley n)	set parenthesis blinking time in sec.
+	(blink-paren-just-inserted mode)
+				blink parenthesis just inserted.
+	(blink-paren-just-inserted)
+				blink parenthesis just inserted ?
+	(last-kbd-macro)	returns list of last keyboard macro.
+	(kbd-macro-query-time n)set how many sec. waiting for C-x q.
+	(kbd-macro-query-time)	returns how many sec. waiting for C-x q.
+	(save-macro fname)	saves kbd macro to fname.
+	(save-macro)		saves kbd macro to (macro-file).
+	(load-macro fname)	load kbd macro from fname.
+	(load-macro)		load kbd macro from (macro-file).
+	(macro-file fname)	set default load/save file for kbd macro.
+	(macro-file)		returns current load/save file for kbd macro.

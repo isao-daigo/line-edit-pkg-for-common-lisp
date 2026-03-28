@@ -1,0 +1,7 @@
+(load "~/build-utils.lisp")
+#+sbcl (declaim (sb-ext:muffle-conditions sb-ext:compiler-note))
+(compile-file (get-src-path "basic-symbol-name-function.lisp"))
+
+#+sbcl (exit)
+#+clisp (exit)
+#+gcl (si::bye)

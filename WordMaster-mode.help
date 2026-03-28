@@ -1,0 +1,131 @@
+Command keys:
+
+	M-/ [num]	Do next command 'num' times (optional, default=4 times).
+	C-e		Search history backward (previous history).
+	C-x		Search history forward (next history).
+	C-d		Move forward one character.
+	C-s		Move backward one character.
+	C-f		Move forward one word.	
+	C-a		Move backward one word.
+	C-w		Scroll up one line.
+	C-z		Scroll down one line.
+	C-q s		Move to beginning of line.
+	C-q d		Move to end of line.
+	C-q e		Move to oldest history.
+	C-q x		Move to end of history.
+	C-g		Delete character (or [DEL]).
+	C-h		Delete backward character (or [BS]).
+	C-y		kill whole line.
+	C-t		kill word.
+	C-q y		kill line from cursor to end.
+	C-u		Kill line from beginning of line.
+	C-v		Toggle insert/overwrite mode.
+        C-i		Complete-symbol(or [Tab]).
+        C-p		Quote next character.
+	C-l		Redraw line, delete control code.
+	[Enter]		end input.
+
+Extended command keys:
+
+	C-x C-x		Exchange point and mark.
+
+	C-w		Kill-region (cut).
+	M-w		Kill-ring-save (copy).
+        
+	M-C-w		Force next kills to append to previous kill.
+	M-C-d		Move forward down one level of parenthesis.
+	M-C-n		Move forward across one balanced group of parenthesis.
+	M-C-f		Move forward across one balanced symbolic-expression.
+
+	M-C-u		Move backward out of one level of parenthesis.
+	M-C-p		Move backward across one balanced group of parenthesis.
+
+	M-C-b		Move backward across one balanced symbolic-expression.
+	M-C-p		Move backward across one balanced group of parenthesis.
+
+	C-x <		Scroll left.
+	C-x >		Scroll right.
+
+	C-s		Incremental search.
+
+	M-C-k		Kill symbolic-expression.
+
+	M-z <c>		Kill characters until <c> (zap-to-char).
+ 	M-\		Delete spaces and tabs around point.
+	M-s		Delete spaces and tabs around point, leaving one space.
+
+	M-t		Transpose words.
+	M-C-t		Transpose symbolic-expression.
+
+	C-@		Set region mark (or C-o)
+	M-@		Mark word (or M-o).
+	M-C-@		Mark symbolic-expression (or M-C-o).
+	C-x C-x		Exchange point and mark.
+
+	C-w		Kill-region (cut).
+	M-w		Kill-ring-save (copy).
+	M-C-w		Force next kills to append to previous kill.
+
+	C-y		Yank (paste from kill-ring).
+	M-y		Paste from kill-ring 2'nd last, 3'rd last,..
+
+	C-x r s <R>	Copy region to register <R> (<R> = any character).
+	C-x r S		Save registers.
+	C-x r R		Restore registers.
+	C-x r i <R>	Insert text from register <R>.
+
+	C-x i		Insert file just before cursor position.
+	C-x C-f         Discard line then insert file.
+	C-x C-w         Write current line to specified file.
+	C-x C-s		Write current line to file.
+
+	M-u		Convert word to upper-case (upcase-word).
+	M-l		Convert word to lower-case (downcase-word).
+	M-c		Capitalize word.
+
+	C-x u		Undo previous changes (or C-_ or M-,).
+	C-x U		Undo previous undo (or M-.).
+
+	C-x (		Start keyboard macro.
+	C-x )		End Keyboard macro.
+	C-x e		Call last keyboard macro.
+	C-x q		Query user during kbd macro execution.
+	C-x C-k		Edit a keyboard macro.
+
+        M-i		Inspect keycode. C-u M-i view non-graphical code. C-u 0 M-i do not view.	
+
+        M-l		Downcase word.
+        M-u		Upcase word.
+        M-p		Move to matching paren.
+        C-x =		View character code, point, cursor position.
+
+	C-f means press <Ctrl> key then press <f>.
+	M-f means press <Meta> key then press <f>.
+	Most PC's keyboard, use <Alt> or <Esc> instead of <Meta>.
+	If use <Esc>, press <Esc> key and release it, then press <f>.
+
+un-keybinded-functions:
+	(self-insert-newline)	insert #\Newline.
+	(view-register)		print registers which contains text.
+	(view-register #\R)	print contents of register R.
+	(save-registers)	saves all register to file.
+	(restore-registers)	restore all registers from file.
+	(registers-file)	returns current registers file-name.
+	(registers-file fname)	set registers file to 'fname'.
+	(undo-limit)		returns current undo limit.
+	(undo-limit n)		set undo limit to n.
+	(blink-paren-deley)	blinking time in sec.
+	(blink-paren-deley n)	set parenthesis blinking time in sec.
+	(blink-paren-just-inserted mode)
+				blink parenthesis just inserted.
+	(blink-paren-just-inserted)
+				blink parenthesis just inserted ?
+	(last-kbd-macro)	returns list of last keyboard macro.
+	(kbd-macro-query-time n)set how many sec. waiting for C-x q.
+	(kbd-macro-query-time)	returns how many sec. waiting for C-x q.
+	(save-macro fname)	saves kbd macro to fname.
+	(save-macro)		saves kbd macro to (macro-file).
+	(load-macro fname)	load kbd macro from fname.
+	(load-macro)		load kbd macro from (macro-file).
+	(macro-file fname)	set default load/save file for kbd macro.
+	(macro-file)		returns current load/save file for kbd macro.
