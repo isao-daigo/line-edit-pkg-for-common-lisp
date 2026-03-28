@@ -1,0 +1,1 @@
+Common Lispで記述したCommon Lisp用のreadlineパッケージ。
