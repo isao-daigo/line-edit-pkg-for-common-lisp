@@ -1,5 +1,5 @@
 Common Lispで記述したCommon Lisp用のreadlineパッケージ。
-![Kooha-2026-03-29-10-16-49](https://github.com/user-attachments/assets/2b6b3b0a-fbe8-4c8b-ab10-31bf5bac4413)
+
 
 以下のファイルをホーム・ディレクトリ下の~/.config/line-editに置き、それ以外のファイルを例えば~/Lisp/line-editに置いて、そのディレクトリでmakeします。
 
